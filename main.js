@@ -1,52 +1,43 @@
+// console.log('this is from main.js\n');
+
+// dependency for inquirer npm package
+const inquirer = require("inquirer");
+
 // require module exported from other .js files
-var BasicCard = require("./BasicCard.js");
-var ClozeCard = require("./ClozeCard.js");
+const BasicCard = require("./BasicCard.js");
+const ClozeCard = require("./ClozeCard.js");
 
-// creating and storing a new classroom object
-// var firstClass = new Classroom("Ahmed", 3187);
+// creating and storing a new basic card object
+//var testCard = new BasicCard('What is the capital of Arkansas?', 'Little Rock');
 
-// calling the addStudent method on our firstClass object
-// firstClass.addStudent("Jacob", "Coding", 3.87);
-
-// console.log(firstClass);
-
-console.log('this is from main.js');
-
-
-
-
-
-//   var sentenceHalves = 'President George Washington was the first president of the USA'.split('George Washington');
-
-//   sentenceHalves.join('_________________');
-
-//   var cardFront = sentenceHalves.join('_________________');
-
-
+// test card
+// console.log(testCard.front); 
+// console.log(testCard.back); 
 
 // Your constructors should work as follows.
-
-// ```
 // var firstPresident = new BasicCard(
-//     "Who was the first president of the United States?", "George Washington");
+//      "Who was the first president of the United States?", "George Washington");
 
-// // "Who was the first president of the United States?"
+// "Who was the first president of the United States?"
 // console.log(firstPresident.front); 
-
-// // "George Washington"
 // console.log(firstPresident.back); 
 
-// var firstPresidentCloze = new ClozeCard(
-//     "George Washington was the first president of the United States.", "George Washington");
+// menu
+// inquirer.prompt([
+//   {
+//     name: "choice",
+//     message: "What kind of card would you like to work with?"
+//   },
 
-// // "George Washington"
-// console.log(firstPresidentCloze.cloze); 
+//   {
+//     name: "back",
+//     message: "Enter an answer for the back of the flash card: "
+//   }
+// ]).then(function(answers) {
+//   // initializes the variable which will take
+//   // in the user's answers to the questions above
+//   var flashCard = new BasicCard(answers.front, answers.back);
 
-// // " ... was the first president of the United States.
-// console.log(firstPresidentCloze.partial); "
-
-// // "George Washington was the first president of the United States.
-// console.log(firstPresidentCloze.fullText): "
-
-// // Should throw or log an error because "oops" doesn't appear in "This doesn't work"
-// var brokenCloze = new ClozeCard("This doesn't work", "oops");
+//   // printInfo method is run to show that the object was created and filled
+//   flashCard.printInfo();
+// });

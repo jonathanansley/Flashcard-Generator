@@ -1,44 +1,83 @@
-console.log('this is from ClozeCard.js');
+console.log('this is from ClozeCard.js\n');
+
+// export constructor
+module.exports = ClozeCard;
+
+// constructor function
+function ClozeCard(text, cloze) {
+ 	this.text = text;
+ 	console.log('this.text: ' + this.text);
+
+ 	// cloze-deleted portion of the text
+ 	this.cloze = cloze;
+ 	console.log('this.cloze: ' + this.cloze);
+
+ 	// the partial text
+	this.partial = text.split(cloze);
+	console.log('this.partial: ' + this.partial);
+
+//   sentenceHalves.join('_________________');
+//   var cardFront = sentenceHalves.join('_________________');;
+
+	//   var sentenceHalves = 'President George Washington was the first president of the USA'.split('George Washington');
+//   sentenceHalves.join('_________________');
+//   var cardFront = sentenceHalves.join('_________________');
+
+//   The constructor should throw or log an error when cloze
+// deletion does _not_ appear in the input text.
+
+//   * Use prototypes to attach these methods, wherever possible.
+
+    // information about the object
+  	this.printInfo = function() {
+  	console.log("This is the printInfo function.");
+   //  console.log("Text: " + this.text + "Cloze: " + this.cloze + "\nPartial: " + this.partial + "full text: " + this.fullText);
+  	};
+
+  	this.printInfo = function() {
+    console.log("Text: " + this.text + "Cloze: " + this.cloze);
+  	};
+
+}; // end of ClozeCard function
 
 
-// //   * This file should define a Node module that exports a constructor for creating cloze-deletion flashcards, e.g.:
-// //     `module.exports = ClozeCard;`
+var firstPresidentCloze = new ClozeCard(
+     "George Washington was the first president of the United States.", "George Washington");
 
-// //   * The constructor should accept two arguments: `text` and `cloze`.
+//"George Washington"
+console.log('firstPresidentCloze.cloze: ' + firstPresidentCloze.cloze); 
 
-// //   * The constructed object should have a `cloze` property that contains _only_ the cloze-deleted portion of the text.
+// " ... was the first president of the United States.
+console.log('firstPresidentCloze.partial' + firstPresidentCloze.partial);
 
-// //   * The constructed object should have a `partial` property that contains _only_ the partial text.
+// "George Washington was the first president of the United States.
+console.log('firstPresidentCloze.text' + firstPresidentCloze.text)
 
-// //   * The constructed object should have a `fullText` property that contains _only_ the full text.
-
-// //   * The constructor should throw or log an error when the cloze deletion does _not_ appear in the input text.
-
-// //   * Use prototypes to attach these methods, wherever possible.
-
-// // The bulk of this assignment is implementing `ClozeCard`. If you build a robust `ClozeCard` implementation, feel free to try your hand at implementing a front-end, as well.
+// Should throw or log an error because "oops" doesn't appear in "This doesn't work"
+var brokenCloze = new ClozeCard("This doesn't work", "oops");
 
 
 
 
 
-// // requiring our Student module exported from student.js
-// var Student = require("./student.js");
 
-// // constructor function for creating classroom objects
-// var Classroom = function(profName, roomNum) {
-//   // this.students will hold all of our student objects
-//   this.students = [];
-//   this.numStudents = 0;
-//   this.profName = profName;
-//   this.roomNum = roomNum;
-//   // a method that creates a student using our Student constructor.
-//   // It then pushes the new student object to this.students and updates this.numStudents
-//   this.addStudent = function(x, y, z) {
-//     this.students.push(new Student(x, y, z));
-//     this.numStudents = this.students.length;
-//   };
-// };
 
-// // exporting our Classroom constructor. We will require it in main.js
-// module.exports = Classroom;
+// cloze card
+// inquirer.prompt([
+//   {
+//     name: "text",
+//     message: "Enter a factual sentence: "
+//   },
+
+//   {
+//     name: "cloze",
+//     message: "What part of the sentence do you want to remove? "
+//   }
+// ]).then(function(answers) {
+//   // initializes the variable which will take
+//   // in the user's answers to the questions above
+//   var clozeCard = new ClozeCard(answers.text, answers.cloze);
+
+//   // printInfo method is run to show that the object was created and filled
+//   clozeCard.printInfo();
+// });

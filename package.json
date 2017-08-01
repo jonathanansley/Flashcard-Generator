@@ -1,0 +1,14 @@
+{
+  "name": "flash-cards",
+  "version": "1.0.0",
+  "description": "To use constructors and prompts from inquirer",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^3.1.1"
+  }
+}

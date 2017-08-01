@@ -34,9 +34,9 @@ See below for examples as to how your constructor should behave.
 
 ## Instructions
 
-* Create a new GitHub repository, named `Flashcard-Generator` or something similar. Clone this to your local drive.
+done * Create a new GitHub repository, named `Flashcard-Generator` or something similar. Clone this to your local drive.
 
-* Create a new file named `BasicCard.js`:
+done * Create a new file named `BasicCard.js`:
 
   * This file should define a Node module that exports a constructor for creating basic flashcards, e.g.:
     `module.exports = BasicCard;`
@@ -94,30 +94,3 @@ console.log(firstPresidentCloze.fullText): "
 
 // Should throw or log an error because "oops" doesn't appear in "This doesn't work"
 var brokenCloze = new ClozeCard("This doesn't work", "oops");
-```
-
-### Bonuses
-
-* Write your constructors such that users can call them with or without the `new` keyword. 
-
-  * Look up scope-safe constructors, and try to implement them. It takes only two additional lines of code.
-
-- - -
-
-### Minimum Requirements
-
-Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed.
-
-- - -
-
-### One More Thing
-
-If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
-
-**Good Luck!**
-
-- - -
-
-## Copyright
-
-Coding Boot Camp © 2016. All Rights Reserved.
